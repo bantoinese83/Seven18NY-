@@ -21,7 +21,7 @@ const generateBookingInquiryEmail = (formData: BookingFormData, quoteData: Booki
     <html>
     <head>
       <meta charset="utf-8">
-      <title>New Event Inquiry - Seven18NY</title>
+      <title>New Event Inquiry - Seven18BK</title>
       <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -49,7 +49,7 @@ const generateBookingInquiryEmail = (formData: BookingFormData, quoteData: Booki
       <div class="container">
         <div class="header">
           <h1>🎉 New Event Inquiry</h1>
-          <p>Seven18NY Venue Booking</p>
+          <p>Seven18BK Venue Booking</p>
         </div>
         
         <div class="content">
@@ -147,7 +147,7 @@ const generateBookingInquiryEmail = (formData: BookingFormData, quoteData: Booki
         </div>
 
         <div class="footer">
-          <p>This inquiry was generated from the Seven18NY website booking system.</p>
+          <p>This inquiry was generated from the Seven18BK website booking system.</p>
           <p><strong>Response Time:</strong> Please respond within 24 hours for best customer experience.</p>
         </div>
       </div>
@@ -156,7 +156,7 @@ const generateBookingInquiryEmail = (formData: BookingFormData, quoteData: Booki
   `;
 
   const textContent = `
-New Event Inquiry - Seven18NY
+New Event Inquiry - Seven18BK
 
 Event Details:
 - Event Type: ${formData.eventType}
@@ -239,14 +239,14 @@ export const sendCustomerConfirmation = async (formData: BookingFormData, quoteD
   try {
     const transporter = createTransporter();
     
-    const subject = `Thank you for your inquiry - Seven18NY Event Booking`;
+    const subject = `Thank you for your inquiry - Seven18BK Event Booking`;
     
     const htmlContent = `
       <!DOCTYPE html>
       <html>
       <head>
         <meta charset="utf-8">
-        <title>Thank you for your inquiry - Seven18NY</title>
+        <title>Thank you for your inquiry - Seven18BK</title>
         <style>
           body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
           .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -259,13 +259,13 @@ export const sendCustomerConfirmation = async (formData: BookingFormData, quoteD
         <div class="container">
           <div class="header">
             <h1>🎉 Thank You for Your Inquiry!</h1>
-            <p>Seven18NY - Brooklyn's Premier Event Venue</p>
+            <p>Seven18BK - Brooklyn's Premier Event Venue</p>
           </div>
           
           <div class="content">
             <p>Dear ${formData.name},</p>
             
-            <p>Thank you for your interest in hosting your <strong>${formData.eventType}</strong> at Seven18NY!</p>
+            <p>Thank you for your interest in hosting your <strong>${formData.eventType}</strong> at Seven18BK!</p>
             
             <p>We've received your inquiry for <strong>${formData.date?.toLocaleDateString('en-US', { 
               weekday: 'long', 
@@ -281,16 +281,16 @@ export const sendCustomerConfirmation = async (formData: BookingFormData, quoteD
               <li>We'll help you finalize all the details for your perfect event</li>
             </ul>
             
-            <p>If you have any immediate questions, feel free to reach out to us at <a href="mailto:info@seven18ny.com">info@seven18ny.com</a> or call us directly.</p>
+            <p>If you have any immediate questions, feel free to reach out to us at <a href="mailto:info@seven18bk.com">info@seven18bk.com</a> or call us directly.</p>
             
-            <p>We look forward to making your event at Seven18NY absolutely spectacular!</p>
+            <p>We look forward to making your event at Seven18BK absolutely spectacular!</p>
             
             <p>Best regards,<br>
-            The Seven18NY Team</p>
+            The Seven18BK Team</p>
           </div>
           
           <div class="footer">
-            <p>Seven18NY | Brooklyn's Premier Event Venue</p>
+            <p>Seven18BK | Brooklyn's Premier Event Venue</p>
             <p>Black Owned • Woman Led • Brooklyn Born</p>
           </div>
         </div>

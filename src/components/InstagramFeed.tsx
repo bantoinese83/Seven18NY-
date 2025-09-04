@@ -13,7 +13,7 @@ const InstagramFeed: React.FC = () => {
                         Our Vibe
                     </h2>
                     <p className="text-base sm:text-lg text-gray-300 mt-3 max-w-2xl mx-auto leading-relaxed px-2">
-                        Follow the latest from <a href="https://www.instagram.com/seven18ny" target="_blank" rel="noopener noreferrer" className="text-brand-green hover:underline transition-colors">@Seven18NY</a> on Instagram.
+                        Follow the latest from <a href="https://www.instagram.com/seven18bk" target="_blank" rel="noopener noreferrer" className="text-brand-green hover:underline transition-colors">@Seven18BK</a> on Instagram.
                     </p>
                 </div>
                 <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 gap-2 sm:gap-3 md:gap-4 max-w-4xl mx-auto">

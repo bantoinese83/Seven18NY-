@@ -14,7 +14,7 @@ export const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) =>
         return {
           '@context': 'https://schema.org',
           '@type': 'Organization',
-          name: 'Seven18NY',
+          name: 'Seven18BK',
           description: 'A stylish and intimate event venue in the heart of Brooklyn, perfect for private gatherings, corporate events, and celebrations.',
           url: baseUrl,
           logo: `${baseUrl}/images/logoseven18.png`,
@@ -43,7 +43,7 @@ export const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) =>
         return {
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
-          name: 'Seven18NY',
+          name: 'Seven18BK',
           description: 'Premium event venue rental in Brooklyn, NY. Black owned, woman led, Brooklyn born.',
           url: baseUrl,
           telephone: '+1-555-SEVEN18',
@@ -70,13 +70,13 @@ export const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) =>
         return {
           '@context': 'https://schema.org',
           '@type': 'Event',
-          name: data.name || 'Event at Seven18NY',
-          description: data.description || 'Join us for an unforgettable event at Seven18NY',
+          name: data.name || 'Event at Seven18BK',
+          description: data.description || 'Join us for an unforgettable event at Seven18BK',
           startDate: data.startDate,
           endDate: data.endDate,
           location: {
             '@type': 'Place',
-            name: 'Seven18NY',
+            name: 'Seven18BK',
             address: {
               '@type': 'PostalAddress',
               streetAddress: '593 3rd Ave',
@@ -88,7 +88,7 @@ export const StructuredData: React.FC<StructuredDataProps> = ({ type, data }) =>
           },
           organizer: {
             '@type': 'Organization',
-            name: 'Seven18NY',
+            name: 'Seven18BK',
             url: baseUrl
           },
           offers: {

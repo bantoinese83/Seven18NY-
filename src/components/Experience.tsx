@@ -27,7 +27,7 @@ const Experience: React.FC = () => {
                     <div className="text-center mb-24">
                         <div className="relative">
                             <h2 className="text-6xl md:text-8xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-white to-brand-gold mb-8 tracking-wide">
-                                Seven18NY
+                                Seven18BK
                             </h2>
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-gold/10 to-transparent blur-3xl" />
                         </div>
@@ -81,7 +81,7 @@ const Experience: React.FC = () => {
                                 className="text-lg text-gray-300 mb-6 leading-relaxed"
                             />
                             <TextReveal
-                                text="From signature cocktails to full venue rental, Seven18NY offers the perfect blend of bar culture and event hosting."
+                                text="From signature cocktails to full venue rental, Seven18BK offers the perfect blend of bar culture and event hosting."
                                 isVisible={isVisible}
                                 className="text-gray-400 leading-relaxed"
                             />
@@ -98,7 +98,7 @@ const Experience: React.FC = () => {
                              <div className="absolute -bottom-5 -right-5 w-full h-full border-4 border-brand-green rounded-lg transition-all duration-700 ease-out" style={{ transform: isVisible ? 'translate(0, 0)' : 'translate(10px, 10px)' }} />
                             <img
                                 src="/gallery/7-2.jpg"
-                                alt="Stylish interior of Seven18NY"
+                                alt="Stylish interior of Seven18BK"
                                 className="absolute top-0 left-0 w-full h-full object-cover rounded-lg shadow-2xl"
                                 loading="lazy"
                             />

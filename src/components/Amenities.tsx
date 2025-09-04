@@ -8,7 +8,7 @@ const WifiModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
   useEffect(() => {
     // WIFI:T:<authentication type>;S:<SSID>;P:<password>;;
-    const wifiString = 'WIFI:T:WPA;S:Seven18NY Guest WiFi;P:celebrate718;;';
+    const wifiString = 'WIFI:T:WPA;S:Seven18BK Guest WiFi;P:celebrate718;;';
     QRCode.toDataURL(wifiString, {
       width: 256,
       margin: 2,
@@ -37,7 +37,7 @@ const WifiModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             {qrCodeUrl ? <img src={qrCodeUrl} alt="WiFi QR Code" /> : <div className="w-64 h-64 animate-pulse bg-gray-700 rounded-lg"></div>}
           </div>
           <div className="text-center mt-6 text-sm text-gray-400">
-            <p><span className="font-semibold">Network:</span> Seven18NY Guest WiFi</p>
+            <p><span className="font-semibold">Network:</span> Seven18BK Guest WiFi</p>
             <p><span className="font-semibold">Password:</span> celebrate718</p>
           </div>
           <button onClick={onClose} className="absolute top-2 right-2 text-gray-500 hover:text-white transition-colors">

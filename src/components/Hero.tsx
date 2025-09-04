@@ -10,10 +10,10 @@ import { useInView } from 'react-intersection-observer';
     <div className="text-center">
       <img
         src="/images/logoseven18.png"
-        alt="Seven18NY Logo"
+        alt="Seven18BK Logo"
         className="w-48 h-48 mx-auto mb-4 opacity-60"
       />
-      <p className="text-xl text-gray-300">Welcome to Seven18NY</p>
+      <p className="text-xl text-gray-300">Welcome to Seven18BK</p>
       <p className="text-gray-500">Brooklyn's Premier Venue</p>
     </div>
   </div>
@@ -173,7 +173,7 @@ gsap.registerPlugin(ScrollTrigger);
 const imageTextOverlays = [
   {
     id: 'overlay-0',
-    title: 'Welcome to Seven18NY',
+    title: 'Welcome to Seven18BK',
     subtitle: 'Brooklyn\'s Premier Bar & Lounge',
     description: 'Where cocktails meet celebrations'
   },
@@ -315,31 +315,31 @@ const Hero: React.FC = () => {
       <div className="images">
         <img
           src="/images/IMG_3507.jpeg"
-          alt="Seven18NY Venue"
+          alt="Seven18BK Venue"
           style={{ '--index': 1 } as React.CSSProperties}
           onError={() => setMainImageError(true)}
         />
         <img
           src="/images/IMG_3505.jpeg"
-          alt="Seven18NY Venue"
+          alt="Seven18BK Venue"
           className="mask-img"
           style={{ '--index': 5 } as React.CSSProperties}
         />
         <img
           src="/images/IMG_3510.jpeg"
-          alt="Seven18NY Venue"
+          alt="Seven18BK Venue"
           className="mask-img"
           style={{ '--index': 4 } as React.CSSProperties}
         />
         <img
           src="/images/IMG_3511.jpeg"
-          alt="Seven18NY Venue"
+          alt="Seven18BK Venue"
           className="mask-img"
           style={{ '--index': 3 } as React.CSSProperties}
         />
         <img
           src="/images/IMG_3512.jpeg"
-          alt="Seven18NY Venue"
+          alt="Seven18BK Venue"
           className="mask-img"
           style={{ '--index': 2 } as React.CSSProperties}
         />
@@ -411,7 +411,7 @@ const Hero: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium tracking-wide drop-shadow-sm">Seven18NY</p>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium tracking-wide drop-shadow-sm">Seven18BK</p>
             <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 drop-shadow-sm">Experience</p>
           </motion.div>
         </motion.div>

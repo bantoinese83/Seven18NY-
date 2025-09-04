@@ -41,7 +41,7 @@ const LocationDistance: React.FC = () => {
     const [permission, setPermission] = useState<'granted' | 'denied' | 'prompt' | 'unavailable'>('prompt');
     const [loading, setLoading] = useState(false);
 
-    // Seven18NY coordinates (593 3rd Avenue, South Slope, Brooklyn)
+    // Seven18BK coordinates (593 3rd Avenue, South Slope, Brooklyn)
     const venueLat = 40.6700;
     const venueLng = -73.9870;
 
@@ -147,7 +147,7 @@ const Footer: React.FC = () => {
                          <div className="flex justify-center md:justify-start space-x-6">
                             <SocialIcon href="https://www.instagram.com/seven18ny"><InstagramIcon /></SocialIcon>
                             <SocialIcon href="https://www.facebook.com/seven18ny"><FacebookIcon /></SocialIcon>
-                            <SocialIcon href="mailto:Seven18NY@gmail.com"><EmailIcon /></SocialIcon>
+                            <SocialIcon href="mailto:Seven18BK@gmail.com"><EmailIcon /></SocialIcon>
                         </div>
                     </div>
                      <div>
@@ -172,10 +172,10 @@ const Footer: React.FC = () => {
                             <span className="block sm:inline sm:ml-1">South Slope, Brooklyn</span>
                         </a>
                         <a
-                            href="mailto:Seven18NY@gmail.com"
+                            href="mailto:Seven18BK@gmail.com"
                             className="block text-gray-400 hover:text-brand-gold transition-colors active:scale-95 touch-manipulation p-2 -m-2 rounded-lg hover:bg-gray-800/30 mt-2"
                         >
-                            Seven18NY@gmail.com
+                            Seven18BK@gmail.com
                         </a>
                         <a
                             href="tel:718-555-0187"
@@ -223,7 +223,7 @@ const Footer: React.FC = () => {
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                                 className="rounded-lg"
-                                title="Seven18NY Location Map"
+                                title="Seven18BK Location Map"
                             ></iframe>
                             <a
                                 href={mapUrl}
@@ -240,7 +240,7 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
                 <div className="text-center text-gray-500 mt-16 pt-8 border-t border-gray-800/50">
-                    <p>&copy; {new Date().getFullYear()} Seven18NY. All Rights Reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Seven18BK. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>

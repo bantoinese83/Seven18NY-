@@ -42,7 +42,7 @@ const Logo: React.FC<LogoProps> = ({
   return (
     <img
       src="/images/logoseven18.png"
-      alt="Seven18NY Logo"
+      alt="Seven18BK Logo"
       className={`transform ${getSizeClasses()} ${getVariantClasses()} ${className}`}
       style={{
         transformOrigin: getTransformOrigin(),

@@ -3,7 +3,7 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const testimonials = [
   {
-    quote: "Seven18NY was the perfect spot for my 30th birthday. The vibe was immaculate, the staff was incredible, and everything went off without a hitch. Can't recommend it enough!",
+    quote: "Seven18BK was the perfect spot for my 30th birthday. The vibe was immaculate, the staff was incredible, and everything went off without a hitch. Can't recommend it enough!",
     name: "Jessica L.",
     event: "Birthday Celebration",
     tags: ['Birthday'],
@@ -15,7 +15,7 @@ const testimonials = [
     tags: ['Corporate'],
   },
   {
-    quote: "An absolutely beautiful and intimate venue for our engagement party. The team at Seven18NY helped us create a magical night we'll never forget. Five stars!",
+    quote: "An absolutely beautiful and intimate venue for our engagement party. The team at Seven18BK helped us create a magical night we'll never forget. Five stars!",
     name: "Maria & Carlos",
     event: "Engagement Party",
     tags: ['Private Party'],

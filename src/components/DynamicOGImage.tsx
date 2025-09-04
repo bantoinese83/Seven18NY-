@@ -10,7 +10,7 @@ interface DynamicOGImageProps {
 }
 
 const DynamicOGImage: React.FC<DynamicOGImageProps> = ({
-  title = "Seven18NY",
+  title = "Seven18BK",
   subtitle = "Brooklyn's Premier Venue",
   backgroundImage,
   theme = 'gold',

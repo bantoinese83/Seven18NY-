@@ -15,7 +15,7 @@ const LogoPlaceholder: React.FC<{ className?: string }> = ({ className = 'w-16 h
   <div className="flex flex-col items-center justify-center">
     <img
       src="/images/logoseven18.png"
-      alt="Seven18NY Logo"
+      alt="Seven18BK Logo"
       className={className}
     />
     <p className="text-xs text-gray-400 mt-1">Image unavailable</p>

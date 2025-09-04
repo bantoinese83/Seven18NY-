@@ -11,11 +11,11 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
-  title = "Seven18NY | Premier Brooklyn Venue for Events & Celebrations",
-  description = "Host your next unforgettable event at Seven18NY, Brooklyn's premier venue. Perfect for birthdays, corporate mixers, weddings, and private gatherings. Signature cocktails, live music, and exceptional service.",
-  keywords = "Brooklyn event venue, Seven18NY, venue rental Brooklyn, party venue NYC, cocktail bar Brooklyn, private event space",
-  image = "https://www.seven18ny.com/images/og-image.jpg",
-  url = "https://www.seven18ny.com/",
+  title = "Seven18BK | Premier Brooklyn Venue for Events & Celebrations",
+  description = "Host your next unforgettable event at Seven18BK, Brooklyn's premier venue. Perfect for birthdays, corporate mixers, weddings, and private gatherings. Signature cocktails, live music, and exceptional service.",
+  keywords = "Brooklyn event venue, Seven18BK, venue rental Brooklyn, party venue NYC, cocktail bar Brooklyn, private event space",
+  image = "https://www.seven18bk.com/images/og-image.jpg",
+  url = "https://www.seven18bk.com/",
   type = "website",
   noindex = false
 }) => {
