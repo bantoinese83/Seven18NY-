@@ -138,10 +138,21 @@ if (typeof document !== 'undefined') {
       .content .top,
       .content .bottom {
         flex-direction: column;
-        gap: 12px;
+        gap: 16px;
         text-align: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .content .top .top-left,
+      .content .top .top-right,
+      .content .bottom .top-left,
+      .content .bottom .top-right {
+        margin-bottom: 12px;
+        width: 100%;
+        max-width: 300px;
       }
 
       .content .center .title-center {
@@ -153,8 +164,82 @@ if (typeof document !== 'undefined') {
       }
     }
 
+    /* Small mobile devices */
+    @media (max-width: 640px) {
+      .content .top,
+      .content .bottom {
+        gap: 12px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .content .top .top-left,
+      .content .top .top-right,
+      .content .bottom .top-left,
+      .content .bottom .top-right {
+        margin-bottom: 10px;
+        max-width: 280px;
+      }
+
+      .content .top .top-left p,
+      .content .top .top-right p,
+      .content .bottom .top-left p,
+      .content .bottom .top-right p {
+        font-size: 13px;
+        line-height: 1.3;
+        margin-bottom: 2px;
+      }
+
+      .content .center .title-center {
+        font-size: clamp(2.2rem, 14vw, 4.5rem);
+      }
+
+      .content .center .top-title,
+      .content .center .title-bottom {
+        font-size: 15px;
+        line-height: 1.3;
+      }
+    }
+
     /* Extra small mobile devices */
     @media (max-width: 480px) {
+      .content .top,
+      .content .bottom {
+        gap: 10px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+
+      .content .top .top-left,
+      .content .top .top-right,
+      .content .bottom .top-left,
+      .content .bottom .top-right {
+        margin-bottom: 8px;
+        max-width: 250px;
+      }
+
+      .content .top .top-left p,
+      .content .top .top-right p,
+      .content .bottom .top-left p,
+      .content .bottom .top-right p {
+        font-size: 11px;
+        line-height: 1.2;
+        margin-bottom: 1px;
+      }
+
+      .content .center .title-center {
+        font-size: clamp(1.8rem, 12vw, 3.5rem);
+      }
+
+      .content .center .top-title,
+      .content .center .title-bottom {
+        font-size: 13px;
+        line-height: 1.2;
+      }
+    }
+
+    /* Very small mobile devices */
+    @media (max-width: 360px) {
       .content .top,
       .content .bottom {
         gap: 8px;
@@ -166,24 +251,27 @@ if (typeof document !== 'undefined') {
       .content .top .top-right,
       .content .bottom .top-left,
       .content .bottom .top-right {
-        margin-bottom: 8px;
+        margin-bottom: 6px;
+        max-width: 220px;
       }
 
       .content .top .top-left p,
       .content .top .top-right p,
       .content .bottom .top-left p,
       .content .bottom .top-right p {
-        font-size: 12px;
-        line-height: 1.2;
+        font-size: 10px;
+        line-height: 1.1;
+        margin-bottom: 1px;
       }
 
       .content .center .title-center {
-        font-size: clamp(2rem, 14vw, 4rem);
+        font-size: clamp(1.5rem, 10vw, 3rem);
       }
 
       .content .center .top-title,
       .content .center .title-bottom {
-        font-size: 14px;
+        font-size: 12px;
+        line-height: 1.1;
       }
     }
 
@@ -435,19 +523,19 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.div
-            className="top-left mb-2 sm:mb-0"
+            className="top-left mb-3 sm:mb-0"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium tracking-wide drop-shadow-sm leading-tight">Bar & Lounge</p>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium tracking-wide drop-shadow-sm leading-tight mb-1">Bar & Lounge</p>
             <p className="text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg text-gray-300 drop-shadow-sm leading-tight">Brooklyn, NY</p>
           </motion.div>
           <motion.div
-            className="top-right mb-2 sm:mb-0"
+            className="top-right mb-3 sm:mb-0"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium tracking-wide drop-shadow-sm leading-tight">Seven18BK</p>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium tracking-wide drop-shadow-sm leading-tight mb-1">Seven18BK</p>
             <p className="text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg text-gray-300 drop-shadow-sm leading-tight">Experience</p>
           </motion.div>
         </motion.div>
@@ -492,19 +580,19 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <motion.div
-            className="top-left mb-2 sm:mb-0"
+            className="top-left mb-3 sm:mb-0"
             whileHover={{ scale: 1.05, x: 5 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-medium tracking-wide drop-shadow-sm leading-tight">Signature Cocktails</p>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-medium tracking-wide drop-shadow-sm leading-tight mb-1">Signature Cocktails</p>
             <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 drop-shadow-sm leading-tight">Private Events</p>
           </motion.div>
           <motion.div
-            className="top-right mb-2 sm:mb-0"
+            className="top-right mb-3 sm:mb-0"
             whileHover={{ scale: 1.05, x: -5 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-medium tracking-wide drop-shadow-sm leading-tight">Live Music</p>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-medium tracking-wide drop-shadow-sm leading-tight mb-1">Live Music</p>
             <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 drop-shadow-sm leading-tight">Venue Rental</p>
           </motion.div>
         </motion.div>
