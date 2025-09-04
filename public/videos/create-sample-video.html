@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Sample Video for Seven18NY</title>
+</head>
+<body>
+    <h1>Sample Video Creation</h1>
+    <p>This HTML file can be used to create a simple sample video for testing the VideoText component.</p>
+    
+    <canvas id="canvas" width="1920" height="1080" style="border: 1px solid #ccc;"></canvas>
+    <br>
+    <button onclick="createVideo()">Create Sample Video</button>
+    <button onclick="downloadVideo()">Download Video</button>
+    
+    <script>
+        function createVideo() {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Create animated gradient background
+            let frame = 0;
+            const animate = () => {
+                // Clear canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Create gradient
+                const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+                gradient.addColorStop(0, `hsl(${(frame * 0.5) % 360}, 70%, 50%)`);
+                gradient.addColorStop(0.5, `hsl(${(frame * 0.3 + 60) % 360}, 80%, 60%)`);
+                gradient.addColorStop(1, `hsl(${(frame * 0.4 + 120) % 360}, 60%, 40%)`);
+                
+                // Fill background
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Add some animated elements
+                for (let i = 0; i < 5; i++) {
+                    const x = (Math.sin(frame * 0.01 + i) * 200) + canvas.width / 2;
+                    const y = (Math.cos(frame * 0.008 + i) * 100) + canvas.height / 2;
+                    const size = 20 + Math.sin(frame * 0.02 + i) * 10;
+                    
+                    ctx.beginPath();
+                    ctx.arc(x, y, size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 255, 255, ${0.3 + Math.sin(frame * 0.03 + i) * 0.2})`;
+                    ctx.fill();
+                }
+                
+                frame++;
+                requestAnimationFrame(animate);
+            };
+            
+            animate();
+        }
+        
+        function downloadVideo() {
+            // This would require additional libraries to convert canvas to video
+            alert('To create a real video file, use tools like FFmpeg or online canvas-to-video converters.');
+        }
+    </script>
+</body>
+</html>

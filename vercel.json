@@ -1,0 +1,24 @@
+{
+  "routes": [
+    {
+      "src": "/images/(.*)",
+      "dest": "/images/$1"
+    },
+    {
+      "src": "/gallery/(.*)",
+      "dest": "/gallery/$1"
+    },
+    {
+      "src": "/videos/(.*)",
+      "dest": "/videos/$1"
+    },
+    {
+      "src": "/favicon(.*)",
+      "dest": "/favicon$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
