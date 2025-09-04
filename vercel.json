@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/((?!images|gallery|videos|favicon|assets).*)",
+      "source": "/((?!images|gallery|videos|favicon|assets|vite\\.svg).*)",
       "destination": "/index.html"
     }
   ],
@@ -26,6 +26,24 @@
     },
     {
       "source": "/videos/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/favicon(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/vite\\.svg",
       "headers": [
         {
           "key": "Cache-Control",
