@@ -7,14 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "server": "tsx scripts/server/server.ts",
-    "server:dev": "tsx watch scripts/server/server.ts",
-    "dev:full": "concurrently \"npm run dev\" \"npm run server:dev\"",
     "type-check": "tsc --noEmit",
-    "lint": "echo 'Linting not configured yet'",
-    "clean": "rm -rf dist",
-    "build:analyze": "npm run build && npx vite-bundle-analyzer dist/assets/*.js",
-    "vercel-build": "npm run build"
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "@google/genai": "^1.15.0",
