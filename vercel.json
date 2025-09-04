@@ -1,10 +1,38 @@
 {
-  "rewrites": [
-    { "source": "/images/(.*)", "destination": "/images/$1" },
-    { "source": "/gallery/(.*)", "destination": "/gallery/$1" },
-    { "source": "/videos/(.*)", "destination": "/videos/$1" },
-    { "source": "/favicon(.*)", "destination": "/favicon$1" },
-    { "source": "/vite.svg", "destination": "/vite.svg" },
-    { "source": "/(.*)", "destination": "/index.html" }
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/images/(.*)",
+      "dest": "/images/$1"
+    },
+    {
+      "src": "/gallery/(.*)",
+      "dest": "/gallery/$1"
+    },
+    {
+      "src": "/videos/(.*)",
+      "dest": "/videos/$1"
+    },
+    {
+      "src": "/favicon(.*)",
+      "dest": "/favicon$1"
+    },
+    {
+      "src": "/vite.svg",
+      "dest": "/vite.svg"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
