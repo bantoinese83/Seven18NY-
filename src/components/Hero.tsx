@@ -138,8 +138,10 @@ if (typeof document !== 'undefined') {
       .content .top,
       .content .bottom {
         flex-direction: column;
-        gap: 8px;
+        gap: 12px;
         text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
       }
 
       .content .center .title-center {
@@ -148,6 +150,40 @@ if (typeof document !== 'undefined') {
 
       .content .center {
         gap: clamp(15px, 8vh, 40px);
+      }
+    }
+
+    /* Extra small mobile devices */
+    @media (max-width: 480px) {
+      .content .top,
+      .content .bottom {
+        gap: 8px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      .content .top .top-left,
+      .content .top .top-right,
+      .content .bottom .top-left,
+      .content .bottom .top-right {
+        margin-bottom: 8px;
+      }
+
+      .content .top .top-left p,
+      .content .top .top-right p,
+      .content .bottom .top-left p,
+      .content .bottom .top-right p {
+        font-size: 12px;
+        line-height: 1.2;
+      }
+
+      .content .center .title-center {
+        font-size: clamp(2rem, 14vw, 4rem);
+      }
+
+      .content .center .top-title,
+      .content .center .title-bottom {
+        font-size: 14px;
       }
     }
 
@@ -399,20 +435,20 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.div
-            className="top-left"
+            className="top-left mb-2 sm:mb-0"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium tracking-wide drop-shadow-sm">Bar & Lounge</p>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 drop-shadow-sm">Brooklyn, NY</p>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium tracking-wide drop-shadow-sm leading-tight">Bar & Lounge</p>
+            <p className="text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg text-gray-300 drop-shadow-sm leading-tight">Brooklyn, NY</p>
           </motion.div>
           <motion.div
-            className="top-right"
+            className="top-right mb-2 sm:mb-0"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium tracking-wide drop-shadow-sm">Seven18BK</p>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 drop-shadow-sm">Experience</p>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium tracking-wide drop-shadow-sm leading-tight">Seven18BK</p>
+            <p className="text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg text-gray-300 drop-shadow-sm leading-tight">Experience</p>
           </motion.div>
         </motion.div>
 
@@ -426,7 +462,7 @@ const Hero: React.FC = () => {
             className="top-title"
             whileHover={{ scale: 1.02 }}
           >
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light tracking-wider text-center drop-shadow-md">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light tracking-wider text-center drop-shadow-md leading-tight">
               Brooklyn's Premier
             </p>
           </motion.div>
@@ -435,7 +471,7 @@ const Hero: React.FC = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold text-white text-center leading-none drop-shadow-lg">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-white text-center leading-tight drop-shadow-lg">
               Bar & Lounge
             </h1>
           </motion.div>
@@ -443,7 +479,7 @@ const Hero: React.FC = () => {
             className="title-bottom"
             whileHover={{ scale: 1.02 }}
           >
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light text-center tracking-wide text-gray-200 drop-shadow-md">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light text-center tracking-wide text-gray-200 drop-shadow-md leading-tight">
               Where cocktails meet celebrations
             </p>
           </motion.div>
@@ -456,20 +492,20 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <motion.div
-            className="top-left"
+            className="top-left mb-2 sm:mb-0"
             whileHover={{ scale: 1.05, x: 5 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-medium tracking-wide drop-shadow-sm">Signature Cocktails</p>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 drop-shadow-sm">Private Events</p>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-medium tracking-wide drop-shadow-sm leading-tight">Signature Cocktails</p>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 drop-shadow-sm leading-tight">Private Events</p>
           </motion.div>
           <motion.div
-            className="top-right"
+            className="top-right mb-2 sm:mb-0"
             whileHover={{ scale: 1.05, x: -5 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-medium tracking-wide drop-shadow-sm">Live Music</p>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 drop-shadow-sm">Venue Rental</p>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-medium tracking-wide drop-shadow-sm leading-tight">Live Music</p>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 drop-shadow-sm leading-tight">Venue Rental</p>
           </motion.div>
         </motion.div>
       </motion.div>
