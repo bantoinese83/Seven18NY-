@@ -50,6 +50,19 @@ if (typeof document !== 'undefined') {
       /* Better mobile performance */
       transform: translateZ(0);
       backface-visibility: hidden;
+      /* Mobile image optimization */
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
+
+    /* Mobile image loading optimization */
+    @media (max-width: 768px) {
+      .images img {
+        /* Reduce image quality on mobile for better performance */
+        image-rendering: auto;
+        /* Optimize for mobile screens */
+        object-position: center center;
+      }
     }
 
     .mask-img {
@@ -77,31 +90,34 @@ if (typeof document !== 'undefined') {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: clamp(10px, 5vw, 30px);
+      padding: clamp(15px, 4vw, 30px);
       /* Mobile-first responsive padding */
-      padding-left: max(10px, 5vw);
-      padding-right: max(10px, 5vw);
+      padding-left: max(15px, 4vw);
+      padding-right: max(15px, 4vw);
+      min-height: 60px;
     }
 
     .content .center {
       width: 100%;
-      max-width: clamp(300px, 90vw, 1200px);
+      max-width: clamp(320px, 95vw, 1200px);
       margin: auto;
       display: flex;
       flex-direction: column;
-      gap: clamp(20px, 10vh, 100px);
+      gap: clamp(15px, 6vh, 80px);
       /* Better mobile spacing */
       justify-content: center;
       text-align: center;
-      padding: 0 clamp(10px, 5vw, 40px);
+      padding: 0 clamp(15px, 4vw, 40px);
+      flex: 1;
     }
 
     .content .center .title-center {
       text-align: center;
-      font-size: clamp(2rem, 12vw, 8rem);
+      font-size: clamp(2.5rem, 8vw, 8rem);
       /* Better mobile typography */
-      line-height: 1.1;
+      line-height: 1.05;
       letter-spacing: -0.02em;
+      font-weight: 800;
     }
 
     .content .center .title-bottom {
@@ -138,29 +154,44 @@ if (typeof document !== 'undefined') {
       .content .top,
       .content .bottom {
         flex-direction: column;
-        gap: 16px;
+        gap: 24px;
         text-align: center;
-        padding-top: 25px;
-        padding-bottom: 25px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         justify-content: center;
         align-items: center;
+        min-height: auto;
       }
 
       .content .top .top-left,
       .content .top .top-right,
       .content .bottom .top-left,
       .content .bottom .top-right {
-        margin-bottom: 12px;
+        margin-bottom: 0;
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
       }
 
       .content .center .title-center {
-        font-size: clamp(2.5rem, 15vw, 5rem);
+        font-size: clamp(2.8rem, 12vw, 4.5rem);
+        line-height: 1.1;
       }
 
       .content .center {
-        gap: clamp(15px, 8vh, 40px);
+        gap: clamp(20px, 6vh, 35px);
+        padding: 0 20px;
+      }
+
+      .content .center .top-title {
+        font-size: clamp(14px, 4vw, 18px);
+      }
+
+      .content .center .title-bottom {
+        font-size: clamp(12px, 3.5vw, 16px);
       }
     }
 
@@ -168,44 +199,7 @@ if (typeof document !== 'undefined') {
     @media (max-width: 640px) {
       .content .top,
       .content .bottom {
-        gap: 12px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
-
-      .content .top .top-left,
-      .content .top .top-right,
-      .content .bottom .top-left,
-      .content .bottom .top-right {
-        margin-bottom: 10px;
-        max-width: 280px;
-      }
-
-      .content .top .top-left p,
-      .content .top .top-right p,
-      .content .bottom .top-left p,
-      .content .bottom .top-right p {
-        font-size: 13px;
-        line-height: 1.3;
-        margin-bottom: 2px;
-      }
-
-      .content .center .title-center {
-        font-size: clamp(2.2rem, 14vw, 4.5rem);
-      }
-
-      .content .center .top-title,
-      .content .center .title-bottom {
-        font-size: 15px;
-        line-height: 1.3;
-      }
-    }
-
-    /* Extra small mobile devices */
-    @media (max-width: 480px) {
-      .content .top,
-      .content .bottom {
-        gap: 10px;
+        gap: 20px;
         padding-top: 18px;
         padding-bottom: 18px;
       }
@@ -214,27 +208,90 @@ if (typeof document !== 'undefined') {
       .content .top .top-right,
       .content .bottom .top-left,
       .content .bottom .top-right {
-        margin-bottom: 8px;
-        max-width: 250px;
+        margin-bottom: 0;
+        max-width: 260px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
       }
 
       .content .top .top-left p,
       .content .top .top-right p,
       .content .bottom .top-left p,
       .content .bottom .top-right p {
-        font-size: 11px;
-        line-height: 1.2;
-        margin-bottom: 1px;
+        font-size: clamp(12px, 3.5vw, 14px);
+        line-height: 1.3;
+        margin-bottom: 0;
+        text-align: center;
       }
 
       .content .center .title-center {
-        font-size: clamp(1.8rem, 12vw, 3.5rem);
+        font-size: clamp(2.4rem, 11vw, 4rem);
+        line-height: 1.05;
       }
 
-      .content .center .top-title,
+      .content .center {
+        gap: clamp(18px, 5vh, 30px);
+        padding: 0 16px;
+      }
+
+      .content .center .top-title {
+        font-size: clamp(13px, 3.8vw, 16px);
+      }
+
       .content .center .title-bottom {
-        font-size: 13px;
-        line-height: 1.2;
+        font-size: clamp(11px, 3.2vw, 14px);
+      }
+    }
+
+    /* Extra small mobile devices */
+    @media (max-width: 480px) {
+      .content .top,
+      .content .bottom {
+        gap: 16px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+
+      .content .top .top-left,
+      .content .top .top-right,
+      .content .bottom .top-left,
+      .content .bottom .top-right {
+        margin-bottom: 0;
+        max-width: 240px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+      }
+
+      .content .top .top-left p,
+      .content .top .top-right p,
+      .content .bottom .top-left p,
+      .content .bottom .top-right p {
+        font-size: clamp(11px, 3.2vw, 13px);
+        line-height: 1.25;
+        margin-bottom: 0;
+        text-align: center;
+      }
+
+      .content .center .title-center {
+        font-size: clamp(2rem, 10vw, 3.2rem);
+        line-height: 1.05;
+      }
+
+      .content .center {
+        gap: clamp(16px, 4vh, 25px);
+        padding: 0 12px;
+      }
+
+      .content .center .top-title {
+        font-size: clamp(12px, 3.5vw, 14px);
+      }
+
+      .content .center .title-bottom {
+        font-size: clamp(10px, 3vw, 12px);
       }
     }
 
@@ -242,36 +299,49 @@ if (typeof document !== 'undefined') {
     @media (max-width: 360px) {
       .content .top,
       .content .bottom {
-        gap: 8px;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        gap: 14px;
+        padding-top: 14px;
+        padding-bottom: 14px;
       }
 
       .content .top .top-left,
       .content .top .top-right,
       .content .bottom .top-left,
       .content .bottom .top-right {
-        margin-bottom: 6px;
-        max-width: 220px;
+        margin-bottom: 0;
+        max-width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
       }
 
       .content .top .top-left p,
       .content .top .top-right p,
       .content .bottom .top-left p,
       .content .bottom .top-right p {
-        font-size: 10px;
-        line-height: 1.1;
-        margin-bottom: 1px;
+        font-size: clamp(10px, 2.8vw, 12px);
+        line-height: 1.2;
+        margin-bottom: 0;
+        text-align: center;
       }
 
       .content .center .title-center {
-        font-size: clamp(1.5rem, 10vw, 3rem);
+        font-size: clamp(1.8rem, 9vw, 2.8rem);
+        line-height: 1.05;
       }
 
-      .content .center .top-title,
+      .content .center {
+        gap: clamp(14px, 3.5vh, 20px);
+        padding: 0 10px;
+      }
+
+      .content .center .top-title {
+        font-size: clamp(11px, 3.2vw, 13px);
+      }
+
       .content .center .title-bottom {
-        font-size: 12px;
-        line-height: 1.1;
+        font-size: clamp(9px, 2.8vw, 11px);
       }
     }
 
@@ -280,11 +350,53 @@ if (typeof document !== 'undefined') {
       .images img {
         /* Disable expensive transforms on touch devices */
         transform: none;
+        will-change: auto;
       }
 
       .content * {
         /* Reduce motion for better performance on touch devices */
-        transition: opacity 0.3s ease, transform 0.3s ease;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      .content .top,
+      .content .bottom {
+        /* Increase touch targets on mobile */
+        min-height: 44px;
+      }
+
+      .content .top .top-left,
+      .content .top .top-right,
+      .content .bottom .top-left,
+      .content .bottom .top-right {
+        /* Better touch interaction */
+        padding: 8px;
+        border-radius: 8px;
+        transition: background-color 0.2s ease;
+      }
+
+      .content .top .top-left:hover,
+      .content .top .top-right:hover,
+      .content .bottom .top-left:hover,
+      .content .bottom .top-right:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    /* Landscape mobile optimization */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .content .center {
+        gap: clamp(10px, 3vh, 20px);
+      }
+
+      .content .center .title-center {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+      }
+
+      .content .top,
+      .content .bottom {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        gap: 12px;
       }
     }
   `;
@@ -439,33 +551,43 @@ const Hero: React.FC = () => {
       <div className="images">
         <img
           src="/images/IMG_3507.jpeg"
-          alt="Seven18BK Venue"
+          alt="Seven18BK Venue Interior"
           style={{ '--index': 1 } as React.CSSProperties}
           onError={() => setMainImageError(true)}
+          loading="eager"
+          decoding="async"
         />
         <img
           src="/images/IMG_3505.jpeg"
-          alt="Seven18BK Venue"
+          alt="Seven18BK Venue Bar Area"
           className="mask-img"
           style={{ '--index': 5 } as React.CSSProperties}
+          loading="lazy"
+          decoding="async"
         />
         <img
           src="/images/IMG_3510.jpeg"
-          alt="Seven18BK Venue"
+          alt="Seven18BK Venue Seating"
           className="mask-img"
           style={{ '--index': 4 } as React.CSSProperties}
+          loading="lazy"
+          decoding="async"
         />
         <img
           src="/images/IMG_3511.jpeg"
-          alt="Seven18BK Venue"
+          alt="Seven18BK Venue Atmosphere"
           className="mask-img"
           style={{ '--index': 3 } as React.CSSProperties}
+          loading="lazy"
+          decoding="async"
         />
         <img
           src="/images/IMG_3512.jpeg"
-          alt="Seven18BK Venue"
+          alt="Seven18BK Venue Lounge"
           className="mask-img"
           style={{ '--index': 2 } as React.CSSProperties}
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
@@ -480,9 +602,9 @@ const Hero: React.FC = () => {
             opacity: index === 0 ? 1 : 0, // First overlay visible by default
           }}
         >
-          <div className="text-center max-w-4xl mx-auto px-4">
+          <div className="text-center max-w-4xl mx-auto px-4 sm:px-6">
             <motion.h1
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-bold text-white mb-4 drop-shadow-2xl"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-display font-bold text-white mb-3 sm:mb-4 drop-shadow-2xl leading-tight"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -490,7 +612,7 @@ const Hero: React.FC = () => {
               {overlay.title}
             </motion.h1>
             <motion.h2
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-gray-200 mb-6 drop-shadow-xl"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-gray-200 mb-4 sm:mb-6 drop-shadow-xl leading-tight"
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -498,7 +620,7 @@ const Hero: React.FC = () => {
               {overlay.subtitle}
             </motion.h2>
             <motion.p
-              className="text-base sm:text-lg md:text-xl text-gray-300 drop-shadow-lg max-w-2xl mx-auto"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 drop-shadow-lg max-w-2xl mx-auto leading-relaxed"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -527,7 +649,7 @@ const Hero: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium tracking-wide drop-shadow-sm leading-tight mb-1">Bar & Lounge</p>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium tracking-wide drop-shadow-sm leading-tight mb-1 sm:mb-1">Bar & Lounge</p>
             <p className="text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg text-gray-300 drop-shadow-sm leading-tight">Brooklyn, NY</p>
           </motion.div>
           <motion.div
@@ -535,7 +657,7 @@ const Hero: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium tracking-wide drop-shadow-sm leading-tight mb-1">Seven18BK</p>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium tracking-wide drop-shadow-sm leading-tight mb-1 sm:mb-1">Seven18BK</p>
             <p className="text-xs sm:text-xs md:text-sm lg:text-base xl:text-lg text-gray-300 drop-shadow-sm leading-tight">Experience</p>
           </motion.div>
         </motion.div>
@@ -584,7 +706,7 @@ const Hero: React.FC = () => {
             whileHover={{ scale: 1.05, x: 5 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-medium tracking-wide drop-shadow-sm leading-tight mb-1">Signature Cocktails</p>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-medium tracking-wide drop-shadow-sm leading-tight mb-1 sm:mb-1">Signature Cocktails</p>
             <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 drop-shadow-sm leading-tight">Private Events</p>
           </motion.div>
           <motion.div
@@ -592,7 +714,7 @@ const Hero: React.FC = () => {
             whileHover={{ scale: 1.05, x: -5 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-medium tracking-wide drop-shadow-sm leading-tight mb-1">Live Music</p>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-medium tracking-wide drop-shadow-sm leading-tight mb-1 sm:mb-1">Live Music</p>
             <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 drop-shadow-sm leading-tight">Venue Rental</p>
           </motion.div>
         </motion.div>
