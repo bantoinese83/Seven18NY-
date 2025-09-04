@@ -65,7 +65,7 @@ const Lightbox: React.FC<{
 
   return (
     <div className="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center animate-fade-in" onClick={onClose}>
-      <button onClick={(e) => { e.stopPropagation(); onPrev(); }} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition p-4 z-[110]">
+      <button onClick={(e) => { e.stopPropagation(); onPrev(); }} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition p-4 sm:p-3 z-[110] touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full active:scale-95">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
       </button>
 
@@ -79,11 +79,11 @@ const Lightbox: React.FC<{
         />
       </div>
       
-      <button onClick={(e) => { e.stopPropagation(); onNext(); }} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition p-4 z-[110]">
+      <button onClick={(e) => { e.stopPropagation(); onNext(); }} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition p-4 sm:p-3 z-[110] touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full active:scale-95">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
       </button>
 
-      <button onClick={onClose} className="absolute top-4 right-4 text-white/70 hover:text-white transition p-2 z-[110]">
+      <button onClick={onClose} className="absolute top-4 right-4 text-white/70 hover:text-white transition p-3 sm:p-2 z-[110] touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full active:scale-95">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
     </div>
@@ -93,7 +93,7 @@ const Lightbox: React.FC<{
 
 const GalleryImage: React.FC<{ item: typeof galleryItems[0], onClick: () => void, index: number }> = ({ item, onClick, index }) => {
     return (
-        <div onClick={onClick} className="group cursor-pointer active:scale-95 transition-transform duration-150">
+        <div onClick={onClick} className="group cursor-pointer active:scale-95 transition-transform duration-150 touch-manipulation">
             {/* Image Container - Mobile-First Responsive */}
             <div className="relative w-full aspect-square sm:aspect-[4/3] md:aspect-square overflow-hidden rounded-lg shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
                 <ImageWithSkeleton

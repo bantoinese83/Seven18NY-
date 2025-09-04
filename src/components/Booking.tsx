@@ -200,9 +200,9 @@ const Step1_DateTime: React.FC<{
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col">
                 <div className="flex justify-between items-center mb-4">
-                    <button onClick={() => changeMonth(-1)} className="p-2 rounded-full hover:bg-gray-700 transition-colors">&larr;</button>
+                    <button onClick={() => changeMonth(-1)} className="p-3 sm:p-2 rounded-full hover:bg-gray-700 transition-colors touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center">&larr;</button>
                     <span className="font-semibold text-lg">{currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}</span>
-                    <button onClick={() => changeMonth(1)} className="p-2 rounded-full hover:bg-gray-700 transition-colors">&rarr;</button>
+                    <button onClick={() => changeMonth(1)} className="p-3 sm:p-2 rounded-full hover:bg-gray-700 transition-colors touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center">&rarr;</button>
                 </div>
                 <div className="grid grid-cols-7 gap-2 text-center">
                     {weekdays.map(day => <div key={day} className="font-bold text-gray-400 text-sm">{day}</div>)}
@@ -218,7 +218,17 @@ const Step1_DateTime: React.FC<{
                         else if (isSelected) classes += "bg-brand-gold text-black font-bold";
                         else classes += "hover:bg-gray-600";
                         
-                        return <div key={day} onClick={() => !isPast && !isUnavailable && setField('date', date)} className={classes}>{day}</div>;
+                        return (
+                            <button
+                                key={day}
+                                onClick={() => !isPast && !isUnavailable && setField('date', date)}
+                                disabled={isPast || isUnavailable}
+                                className={`${classes} touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center transition-all duration-200 active:scale-95`}
+                                style={{ WebkitTapHighlightColor: 'transparent' }}
+                            >
+                                {day}
+                            </button>
+                        );
                     })}
                 </div>
 
@@ -334,7 +344,7 @@ const Step2_Details: React.FC<{
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
             <div>
                 <label className="block text-gray-300 mb-2">Event Type</label>
-                <select name="eventType" onChange={e => setField('eventType', e.target.value)} value={formData.eventType} className="w-full bg-gray-700/50 text-white p-4 rounded-md border border-gray-600 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none">
+                <select name="eventType" onChange={e => setField('eventType', e.target.value)} value={formData.eventType} className="w-full bg-gray-700/50 text-white p-4 sm:p-3 rounded-md border border-gray-600 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none text-base sm:text-sm touch-manipulation">
                     <option>Birthday Party</option>
                     <option>Corporate Event</option>
                     <option>Pop-up Mixer</option>
@@ -345,7 +355,7 @@ const Step2_Details: React.FC<{
             </div>
             <div>
                 <label className="block text-gray-300 mb-2">Number of Guests</label>
-                <input type="number" name="guests" value={formData.guests} onChange={e => setField('guests', parseInt(e.target.value) || 0)} className="w-full bg-gray-700/50 text-white p-4 rounded-md border border-gray-600 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none" min="1" />
+                <input type="number" name="guests" value={formData.guests} onChange={e => setField('guests', parseInt(e.target.value) || 0)} className="w-full bg-gray-700/50 text-white p-4 sm:p-3 rounded-md border border-gray-600 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none text-base sm:text-sm touch-manipulation" min="1" />
             </div>
         </div>
 
@@ -419,8 +429,8 @@ const Step2_Details: React.FC<{
             ))}
         </div>
         <div className="mt-8 flex justify-between">
-            <button onClick={onPrev} className="text-gray-300 font-bold py-3 px-8 rounded-full hover:bg-gray-700 transition-colors">Back</button>
-            <button onClick={onNext} disabled={!isValid} className="btn-aurora bg-brand-gold text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-90 transition-all duration-300 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed">Next</button>
+            <button onClick={onPrev} className="text-gray-300 font-bold py-3 px-8 sm:px-6 rounded-full hover:bg-gray-700 transition-colors touch-manipulation min-h-[44px] active:scale-95">Back</button>
+            <button onClick={onNext} disabled={!isValid} className="btn-aurora bg-brand-gold text-black font-bold py-3 px-8 sm:px-6 rounded-full text-lg hover:bg-opacity-90 transition-all duration-300 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed touch-manipulation min-h-[44px] active:scale-95">Next</button>
         </div>
     </div>
 )};
@@ -431,7 +441,7 @@ const AnimatedInput: React.FC<React.InputHTMLAttributes<HTMLInputElement> & { la
             <input
                 {...props}
                 placeholder=" "
-                className={`form-input w-full bg-gray-700/50 text-white p-4 rounded-md border ${error ? 'border-red-500' : 'border-gray-600'} focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none transition-colors peer`}
+                className={`form-input w-full bg-gray-700/50 text-white p-4 sm:p-3 rounded-md border ${error ? 'border-red-500' : 'border-gray-600'} focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none transition-colors peer text-base sm:text-sm touch-manipulation`}
             />
             <label className="form-label absolute left-4 top-8 text-gray-400 pointer-events-none transition-all duration-300 ease-in-out origin-[0] peer-focus:text-brand-gold">{label}</label>
             {error && <p className="text-red-400 text-sm mt-1 absolute">{error}</p>}
@@ -455,11 +465,11 @@ const Step3_Info: React.FC<{
             <AnimatedInput label="Full Name" type="text" name="name" value={formData.name} onChange={e => setField('name', e.target.value)} onBlur={onValidate} required error={errors.name} />
             <AnimatedInput label="Email Address" type="email" name="email" value={formData.email} onChange={e => setField('email', e.target.value)} onBlur={onValidate} required error={errors.email} />
             <AnimatedInput label="Phone Number" type="tel" name="phone" value={formData.phone} onChange={e => setField('phone', e.target.value)} onBlur={onValidate} required error={errors.phone} />
-            <textarea value={formData.details} onChange={e => setField('details', e.target.value)} placeholder="Any special requests or details (optional)..." rows={4} className="w-full bg-gray-700/50 text-white p-4 rounded-md border border-gray-600 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none"></textarea>
+            <textarea value={formData.details} onChange={e => setField('details', e.target.value)} placeholder="Any special requests or details (optional)..." rows={4} className="w-full bg-gray-700/50 text-white p-4 sm:p-3 rounded-md border border-gray-600 focus:ring-2 focus:ring-brand-gold focus:border-brand-gold outline-none text-base sm:text-sm touch-manipulation resize-vertical"></textarea>
         </div>
         <div className="mt-8 flex justify-between items-center">
-            <button onClick={onPrev} className="text-gray-300 font-bold py-3 px-8 rounded-full hover:bg-gray-700 transition-colors">Back</button>
-            <button onClick={onSubmit} disabled={!isValid} className="btn-aurora bg-brand-gold text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-90 transition-all duration-300 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed">Generate Quote</button>
+            <button onClick={onPrev} className="text-gray-300 font-bold py-3 px-8 sm:px-6 rounded-full hover:bg-gray-700 transition-colors touch-manipulation min-h-[44px] active:scale-95">Back</button>
+            <button onClick={onSubmit} disabled={!isValid} className="btn-aurora bg-brand-gold text-black font-bold py-3 px-8 sm:px-6 rounded-full text-lg hover:bg-opacity-90 transition-all duration-300 disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed touch-manipulation min-h-[44px] active:scale-95">Generate Quote</button>
         </div>
          {errors.details && <p className="text-red-400 text-center mt-4 animate-fade-in">{errors.details}</p>}
     </div>
