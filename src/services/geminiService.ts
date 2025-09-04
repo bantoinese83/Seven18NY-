@@ -19,7 +19,7 @@ export const generateBookingQuote = async (formData: BookingFormData): Promise<B
   const isWeekend = formData.date ? [0, 6].includes(formData.date.getDay()) : false;
   
   const prompt = `
-    You are an expert booking and quoting assistant for 'Seven18NY', a stylish event venue in Brooklyn. A customer is inquiring about renting the venue. Your task is to generate a detailed quote and a summary based on their selections.
+    You are an expert booking and quoting assistant for 'Seven18BK', a stylish event venue in Brooklyn. A customer is inquiring about renting the venue. Your task is to generate a detailed quote and a summary based on their selections.
 
     Customer's Data:
     - Name: ${formData.name}
@@ -96,7 +96,7 @@ export const generateEventInspiration = async (eventType: string, details: strin
   }
   
   const prompt = `
-    You are 'Aura', a creative event stylist for the 'Seven18NY' venue. A customer is planning an event and needs inspiration. Based on their event type and details, generate a creative "Inspiration Plan".
+    You are 'Aura', a creative event stylist for the 'Seven18BK' venue. A customer is planning an event and needs inspiration. Based on their event type and details, generate a creative "Inspiration Plan".
 
     Event Details:
     - Event Type: "${eventType}"

@@ -139,7 +139,7 @@ const Gallery: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-medium text-white tracking-wide mb-4">
-              A Glimpse of Seven18NY
+              A Glimpse of Seven18BK
             </h2>
             <p className="text-lg text-gray-400 max-w-xl mx-auto leading-relaxed">
               Explore the vibe and possibilities for your next event.

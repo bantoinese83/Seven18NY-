@@ -505,7 +505,7 @@ const StripeForm: React.FC<{ onPayment: () => void, depositAmount: number }> = (
 
 const DigitalEventPass: React.FC<{ formData: BookingFormData; quoteData: BookingQuote }> = ({ formData, quoteData }) => {
     const [qrCodeUrl, setQrCodeUrl] = useState('');
-    const bookingId = useMemo(() => `S18NY-${Date.now().toString().slice(-6)}`, []);
+    const bookingId = useMemo(() => `S18BK-${Date.now().toString().slice(-6)}`, []);
 
     useEffect(() => {
         const passDetails = {
